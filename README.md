@@ -18,3 +18,5 @@ The process retrieves corresponding triples from the following sources ( tentati
 - another SPARQL server, less good for concurrent updates (but that is not necessary here): Jena TDB and Jena Fuseki; see [Setting up a DBPedia SPARQL mirror with Jena](http://svn.code.sf.net/p/eulergui/code/trunk/eulergui/html/server-sparql-dbpedia.html)
 - for pretty reformatting of semantic data: rapper ; get or install raptor v2 from [http://librdf.org/raptor](http://librdf.org/raptor/) or from Debian / Ubuntu package raptor2-utils .
 
+## Data sources
+See [GeographicData](https://github.com/pixelhumain/cityData/wiki/GeographicData) in this projects's Wiki.
