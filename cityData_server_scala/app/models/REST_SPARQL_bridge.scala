@@ -51,8 +51,7 @@ object REST_SPARQL_bridge {
         override def map(value: String): String = wrapAsURI(iso3166ToDBPedia.get(value).get)
       },
       RequestRDFPathName(dbo + "postalCode")))
-    val queryString = makeSPARQL(request, conf)
-    makeQuery(queryString)
+    SPARQLDatabase.runQuery(makeSPARQL(request, conf))
   }
 
   private def makeSPARQL(request: Request[AnyContent], conf: RequestRDFConfig): String = {
@@ -64,7 +63,9 @@ object REST_SPARQL_bridge {
       x =>
         wrapAsURI(x._1.uri) + " " + x._1.map(x._2) + " ;\n"
     }
-    queryBeginning + criteria.mkString + queryEnding
+    val queryString = queryBeginning + criteria.mkString + queryEnding
+    println("makeSPARQL: " + queryString)
+    queryString
   }
 
   def wrapAsURI(uri: String) = s"<$uri>"
@@ -74,8 +75,8 @@ object REST_SPARQL_bridge {
   }
   case class RequestRDFConfig(mappings: Seq[RequestRDFPathName])
 
-  def makeQuery(queryString: String): String = {
-    ???
-  }
+//  def runQuery(queryString: String): String = {
+//    SPARQLDatabase.runQuery(queryString)
+//  }
 
 }
