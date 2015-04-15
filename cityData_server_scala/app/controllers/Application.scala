@@ -23,7 +23,7 @@ object Application extends Controller {
    *  - local (embedded) dbPedia instance
    *  - hosted dbPedia instance at endpoint http://dbpedia.org/sparql
    */
-  def displayCity = {
+  def displayCity(path: String) = {
     Action { implicit request =>
       Ok(REST_SPARQL_bridge.getJSONLD(request)).as("application/ld+json")
     }

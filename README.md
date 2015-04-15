@@ -9,7 +9,7 @@ The entry point starts with a country and a postal code.
 The process retrieves corresponding triples from the following sources ( tentative list ) :
 - [dbPedia.org](http://dbPedia.org)
 - [Wikidata](http://Wikidata.org)
-- [data.INSEE.fr]((http://data.INSEE.fr) (for France)
+- [data.INSEE.fr](http://data.INSEE.fr) (for France)
 - [BANO](http://openstreetmap.fr/bano) (for France)
 
  ## Panoply of tools

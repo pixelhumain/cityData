@@ -1,5 +1,5 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-GET     /city	controllers.Application.displayCity()
+GET     /cities/*path		controllers.Application.displayCity(path: String)
 
