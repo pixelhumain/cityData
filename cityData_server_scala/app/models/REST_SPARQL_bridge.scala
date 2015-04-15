@@ -6,8 +6,6 @@ import play.api.mvc.AnyContent
 object REST_SPARQL_bridge {
 
   /** For URI's like
-   *   /baseURL/Settlement?country=France&postalCode=01600
-   * or (?)
    *   /baseURL/cities/fr/01600
    * 
    * create SPARQL query: <pre>
@@ -28,7 +26,7 @@ object REST_SPARQL_bridge {
    *   */
   def getJSONLD(request: Request[AnyContent]): String = {
     println("getJSONLD: " + request)
-    val headers = request.headers.toSimpleMap
+//    val headers = request.headers.toSimpleMap
     
     // TODO >>>>>>>>>>>>>>
     "bla"

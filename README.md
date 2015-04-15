@@ -8,9 +8,9 @@ multiple sources of semantic data set (Linked Open Data) relative to a city.
 The entry point starts with a country and a postal code.
 The process retrieves corresponding triples from the following sources ( tentative list ) :
 - [dbPedia.org](http://dbPedia.org)
-- Wikidata
-- data.INSEE.fr (for France)
-- BANO (for France)
+- [Wikidata](http://Wikidata.org)
+- [data.INSEE.fr]((http://data.INSEE.fr) (for France)
+- [BANO](http://openstreetmap.fr/bano) (for France)
 
  ## Panoply of tools
 - for semantic data transformation: Euler / EYE ; [introduction to the N3 language and a how to for the Euler/eye engine](http://svn.code.sf.net/p/eulergui/code/trunk/eulergui/html/N3_introduction.xhtml)
