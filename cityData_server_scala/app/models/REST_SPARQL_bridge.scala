@@ -24,7 +24,7 @@ object REST_SPARQL_bridge {
 
   /**
    * For URI's like
-   *   /baseURL/cities/fr/01600
+   *   /baseURL/cities/fra/01600
    *
    * create SPARQL query: <pre>
    *
@@ -74,9 +74,5 @@ object REST_SPARQL_bridge {
     def map(value: String): String = value
   }
   case class RequestRDFConfig(mappings: Seq[RequestRDFPathName])
-
-//  def runQuery(queryString: String): String = {
-//    SPARQLDatabase.runQuery(queryString)
-//  }
 
 }
