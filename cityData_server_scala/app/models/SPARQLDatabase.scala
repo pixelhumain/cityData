@@ -19,6 +19,12 @@ object SPARQLDatabase extends SPARQLDatabaseTrait[Jena, Dataset] with JenaModule
     dataset
   }
   
-  implicit val jsonldExpandedWriter:  RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdExpanded] = ???
-  implicit val jsonldFlattenedWriter:  RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdFlattened] = ???
+  implicit val jsonldExpandedWriter:
+  RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdExpanded] =
+    jsonldCompactedWriter.asInstanceOf[
+      RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdExpanded]]
+  implicit val jsonldFlattenedWriter:
+  RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdFlattened] =
+    jsonldCompactedWriter.asInstanceOf[
+        RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdFlattened] ]
 }

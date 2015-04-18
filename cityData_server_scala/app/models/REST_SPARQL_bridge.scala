@@ -56,7 +56,7 @@ object REST_SPARQL_bridge {
 
   private def makeSPARQL(request: Request[AnyContent], conf: RequestRDFConfig): String = {
     val path = request.path
-    val elems = path.split("/")
+    val elems = path.split("/").drop(2)
     // elems contains e.g.  "fr", "01600"
     val propsAndValues = conf.mappings.zip(elems)
     val criteria: Seq[String] = propsAndValues.map {
@@ -69,9 +69,10 @@ object REST_SPARQL_bridge {
   }
 
   def wrapAsURI(uri: String) = s"<$uri>"
+  def wrapAsString(uri: String) = s""""${uri}""""
 
   case class RequestRDFPathName(uri: String) {
-    def map(value: String): String = value
+    def map(value: String): String = wrapAsString(value)
   }
   case class RequestRDFConfig(mappings: Seq[RequestRDFPathName])
 
