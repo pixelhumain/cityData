@@ -2,8 +2,9 @@ package models
 
 import play.api.mvc.Request
 import play.api.mvc.AnyContent
+import org.w3.banana.RDF
 
-object REST_SPARQL_bridge {
+trait REST_SPARQL_bridge[Rdf <: RDF, DATASET] extends SPARQLDatabaseTrait[Rdf, DATASET] {
 
   val dbo = "http://dbpedia.org/ontology/"
   val dbp = "http://dbpedia.org/resource/"
@@ -27,20 +28,19 @@ object REST_SPARQL_bridge {
    *   /baseURL/cities/fra/01600
    *
    * create SPARQL query: <pre>
-   *
-   * PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
-   * PREFIX dbpedia:     <http://dbpedia.org/resource/>
-   * CONSTRUCT {
-   *   ?CITY ?P ?O .
-   * }
-   * WHERE {
-   *   ?CITY a dbpedia-owl:Settlement ;
-   *         dbpedia-owl:country dbpedia:France ;
-   *         dbpedia-owl:postalCode 01600 ;
-   *         ?P ?O .
-   * }
-   * <pre>
-   *
+    
+     PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+     PREFIX dbpedia:     <http://dbpedia.org/resource/>
+     CONSTRUCT {
+       ?CITY ?P ?O .
+     }
+     WHERE {
+       ?CITY a dbpedia-owl:Settlement ;
+             dbpedia-owl:country dbpedia:France ;
+             dbpedia-owl:postalCode 01600 ;
+             ?P ?O .
+     }
+   </pre>
    */
   def getJSONLD(request: Request[AnyContent]): String = {
     println("getJSONLD: " + request)
@@ -51,7 +51,7 @@ object REST_SPARQL_bridge {
         override def map(value: String): String = wrapAsURI(iso3166ToDBPedia.get(value).get)
       },
       RequestRDFPathName(dbo + "postalCode")))
-    SPARQLDatabase.runQuery(makeSPARQL(request, conf))
+    runQuery(makeSPARQL(request, conf))
   }
 
   private def makeSPARQL(request: Request[AnyContent], conf: RequestRDFConfig): String = {
@@ -69,7 +69,7 @@ object REST_SPARQL_bridge {
   }
 
   def wrapAsURI(uri: String) = s"<$uri>"
-  def wrapAsString(uri: String) = s""""${uri}""""
+  def wrapAsString(string: String) = s""""${string}""""
 
   case class RequestRDFPathName(uri: String) {
     def map(value: String): String = wrapAsString(value)

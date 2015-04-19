@@ -9,8 +9,9 @@ import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 import models.REST_SPARQL_bridge
 import org.w3.banana.io.JsonLd
+import models.REST_SPARQL_bridge_Jena
 
-object Application extends Controller {
+object Application extends Controller with REST_SPARQL_bridge_Jena {
 
   /**
    * a simple wrapper with simple URL's for a SPARQL database.
@@ -28,7 +29,7 @@ object Application extends Controller {
    */
   def displayCity(path: String) = {
     Action { implicit request =>
-    Ok(REST_SPARQL_bridge.getJSONLD(request)).
+    Ok(getJSONLD(request)).
      as("application/ld+json; charset=utf-8")
     }
   }

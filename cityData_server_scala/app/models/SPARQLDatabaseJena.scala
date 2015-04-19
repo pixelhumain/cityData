@@ -11,7 +11,7 @@ import org.w3.banana.io.RDFWriter
 import org.w3.banana.io.JsonLdExpanded
 import org.w3.banana.io.JsonLdFlattened
 
-object SPARQLDatabase extends SPARQLDatabaseTrait[Jena, Dataset] with JenaModule {
+trait SPARQLDatabaseJena extends SPARQLDatabaseTrait[Jena, Dataset] with JenaModule {
   type DATASET = Dataset
   override lazy val dataset: DATASET = {
     val dataset = TDBFactory.createDataset("TDB")
@@ -20,11 +20,11 @@ object SPARQLDatabase extends SPARQLDatabaseTrait[Jena, Dataset] with JenaModule
   }
   
   implicit val jsonldExpandedWriter:
-  RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdExpanded] =
+  RDFWriter[Rdf, scala.util.Try, JsonLdExpanded] =
     jsonldCompactedWriter.asInstanceOf[
-      RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdExpanded]]
+      RDFWriter[Rdf, scala.util.Try, JsonLdExpanded]]
   implicit val jsonldFlattenedWriter:
-  RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdFlattened] =
+  RDFWriter[Rdf, scala.util.Try, JsonLdFlattened] =
     jsonldCompactedWriter.asInstanceOf[
-        RDFWriter[models.SPARQLDatabase.Rdf,scala.util.Try, JsonLdFlattened] ]
+        RDFWriter[Rdf, scala.util.Try, JsonLdFlattened] ]
 }
