@@ -10,8 +10,9 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import models.REST_SPARQL_bridge
 import org.w3.banana.io.JsonLd
 import models.REST_SPARQL_bridge_Jena
+import models.REST_SPARQL_bridge_BigData
 
-object Application extends Controller with REST_SPARQL_bridge_Jena {
+object ApplicationBigData extends Controller with REST_SPARQL_bridge_BigData {
 
   /**
    * a simple wrapper with simple URL's for a SPARQL database.

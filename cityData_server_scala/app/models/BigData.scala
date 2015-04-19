@@ -23,7 +23,7 @@ object BigData {
    * @param dbFileName database journal filename
    * @return
    */
-  def apply(clean:Boolean,url:String="./db/test/",dbFileName:String="bigdata.jnl"): BigData = {
+  def apply(clean:Boolean=false, url:String="./db/test/", dbFileName:String="bigdata.jnl"): BigData = {
     if(clean) cleanLocalDb(url,dbFileName)
     new BigData(url,dbFileName)
   }
