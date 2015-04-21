@@ -12,6 +12,11 @@ The process retrieves corresponding triples from the following sources ( tentati
 - [data.INSEE.fr](http://data.INSEE.fr) (for France)
 - [BANO](http://openstreetmap.fr/bano) (for France)
 
+Currently only dbPedia.org is used.
+There is a server based on PlayFramework backed by an Apache Jena TDB SPARQL database in this project: 
+[cityData\_server\_scala\_jena](cityData_server_scala_jena) .
+
+
  ## Panoply of tools
 - for semantic data transformation: Euler / EYE ; [introduction to the N3 language and a how to for the Euler/eye engine](http://svn.code.sf.net/p/eulergui/code/trunk/eulergui/html/N3_introduction.xhtml)
 - for serving RDF / JSON-LD data with SPARQL : [BigData(TM)](http://BigData.com)
