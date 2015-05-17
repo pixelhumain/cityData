@@ -32,4 +32,11 @@ in activator shell type:
     runMain tdb.tdbloader --loc=TDB --graph=dbPedia instance_types_en_uris_fr.ttl mappingbased_properties_en_uris_fr.ttl
 ```
 
+# Starting a SPARQL server
+
 You can also use [Fuseki](http://jena.apache.org/documentation/serving_data/) web manager.
+Download [Apache Jena Fuseki](https://jena.apache.org/download/) .
+Start the server: see the [Apache Jena Fuseki page](https://jena.apache.org/documentation/fuseki2/index.html)
+
+NOTE: either you start the REST server, or the SPARQL server, as the 2 cannot use the same TDB database on disk.
+
