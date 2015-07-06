@@ -1,0 +1,25 @@
+{
+	"src":"INSEE",
+	"date_create":"06\/07\/15",
+	"date_update":"06\/07\/15",
+	"url":"http:\/\/insee.fr\/fr\/themes\/detail.asp?reg_id=99&ref_id=equip-serv-ens-1er-degre",
+	"nameFile":"enseignement_1er_degres_public_part8.csv",
+	"separateur":",",
+	"codeInsee":"0",
+	"fields":{
+		"NB_C101":"enseignement.premierdegre.2013.ecole_maternelle.public",
+		"NB_C101_NB_CANT":"enseignement.premierdegre.2013.ecole_maternelle.cantine.public",
+		"NB_C101_NB_EP":"enseignement.premierdegre.2013.ecole_maternelle.reseau_educ_prioritaire.public",
+		"NB_C101_NB_RPIC":"enseignement.premierdegre.2013.ecole_maternelle.RPIC.public",
+		"NB_C102":"enseignement.premierdegre.2013.classe_maternelle_RPI.public",
+		"NB_C102_NB_CANT":"enseignement.premierdegre.2013.classe_maternelle_RPI.cantine.public",
+		"NB_C102_NB_EP":"enseignement.premierdegre.2013.classe_maternelle_RPI.reseau_educ_prioritaire.public",
+		"NB_C104_NB_CANT":"enseignement.premierdegre.2013.ecole_elementaire.public",
+		"NB_C104_NB_CL_PELEM":"enseignement.premierdegre.2013.ecole_elementaire.classe_pre_elementaire.public",
+		"NB_C104_NB_EP":"enseignement.premierdegre.2013.ecole_elementaire.reseau_educ_prioritaire.public",
+		"NB_C104_NB_RPIC":"enseignement.premierdegre.2013.ecole_elementaire.RPIC.public",
+		"NB_C105":"enseignement.premierdegre.2013.classe_elementaire_RPI.public",
+		"NB_C105_NB_CANT":"enseignement.premierdegre.2013.classe_elementaire_RPI.cantine.public",
+		"NB_C105_NB_CL_PELEM":"enseignement.premierdegre.2013.classe_elementaire_RPI.reseau_educ_prioritaire.public"
+	}
+}
