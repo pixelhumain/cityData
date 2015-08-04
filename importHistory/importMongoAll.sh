@@ -4,3 +4,6 @@ cd .. ;
 cd 20150722_base_cc_entr_etab-2012;
 sh importMongo.sh;
 cd .. ;
+cd 20150723_equip-serv-commerce-com;
+sh importMongo.sh;
+cd .. ;
