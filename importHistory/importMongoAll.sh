@@ -1,9 +1,12 @@
-cd 20150721_base-cc-evol-struct-pop-2011;
+cd 20150907_base-cc-evol-struct-pop-2011;
 sh importMongo.sh;
 cd .. ;
-cd 20150722_base_cc_entr_etab-2012;
+cd 20150908_base_cc_entr_etab-2012;
 sh importMongo.sh;
 cd .. ;
-cd 20150723_equip-serv-commerce-com;
+cd 20150910_equip-tour-transp-com;
+sh importMongo.sh;
+cd .. ;
+cd 20150910_equip-serv-medical-para-com;
 sh importMongo.sh;
 cd .. ;
