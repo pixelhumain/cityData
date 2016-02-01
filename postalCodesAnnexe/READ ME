@@ -1,0 +1,9 @@
+
+postalCodesAnnexe.json contient les CEDEX, AIR ou SP qui sont rattacher à un code postal en formats JSON
+
+Vérifier que la collection "postalCodes" soit déjà crée.
+Exécuté le fichier importMongo.sh pour importer les données :
+	-> sh importMongo.sh
+Où alors exécuter le code qui se trouve dans le fichier importMongo.sh
+
+
